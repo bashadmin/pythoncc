@@ -26,4 +26,8 @@ text = re.sub('<INSD[^a-zA-Z]>', "", open("INSD.xml").read())
     AAA59173
 text = re.sub('<[^<]+>', "", open("/path/to/file").read())
     (<INSD)(^\w+)(>)(^.$)(</.+>)
+    (</?INSD)[^/w]+>
+    ((<INSD|</INSD)|>|>)
+    (<INSD[^[_\n]*_)|(</[^\n]*)|(<INSD)
+    (<INSD[^[_\n]*_)|(</[^\n]*)|<([^\n&^>]*>\n)|(<INSD{1})
 ```
