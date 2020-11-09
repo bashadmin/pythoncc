@@ -24,6 +24,6 @@ We can avoid a ValueError by first checking if the substring exists in the strin
 text = re.sub('<INSD[^a-zA-Z]>', "", open("INSD.xml").read())
 
     AAA59173
-
+text = re.sub('<[^<]+>', "", open("/path/to/file").read())
     (<INSD)(^\w+)(>)(^.$)(</.+>)
 ```
