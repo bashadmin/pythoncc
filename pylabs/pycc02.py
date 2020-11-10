@@ -102,3 +102,8 @@ print(file_size(('Class Assignment', 'docx', 17875))) # Should print 17.46
 print(file_size(('Notes', 'txt', 496))) # Should print 0.48
 print(file_size(('Program', 'py', 1239))) # Should print 1.21
 
+def skip_elements2(elements):
+	return [x for i, x in enumerate(elements) if i % 2 == 0]
+
+print(skip_elements2(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements2(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
