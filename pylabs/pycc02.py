@@ -117,3 +117,18 @@ print(odd_numbers(10)) # Should print [1, 3, 5, 7, 9]
 print(odd_numbers(11)) # Should print [1, 3, 5, 7, 9, 11]
 print(odd_numbers(1))  # Should print [1]
 print(odd_numbers(-1)) # Should print []
+
+toc = {"Introduction":1, "Chapter 1":4, "Chapter 2":11, "Chapter 3":25, "Chapter 4":30}
+toc["Epilogue"] = 39 # Epilogue starts on page 39
+toc["Chapter 3"] = 24 # Chapter 3 now starts on page 24
+print(toc) # What are the current contents of the dictionary?
+print("Chapter 5" in toc) # Is there a Chapter 5?
+
+cool_beasts = {"octopuses":"tentacles", "dolphins":"fins", "rhinos":"horns"}
+for key_value in cool_beasts.items():
+    print("{} have {}".format(*key_value))
+
+wardrobe = {"shirt":["red","blue","white"], "jeans":["blue","black"]}
+for clothes, colors in wardrobe.items():
+	for color in colors:
+		print("{} {}".format(color, clothes))

@@ -7,3 +7,17 @@ def replace_domain(email, old_domain, new_domain):
 
 
 print(replace_domain('shafan@gmail.com', "gmail.com", "hotmail.com"))
+
+
+def count_letters(text):
+    result = {}
+    for letter in text:
+        if letter not in result:
+            result[letter] = 0
+        result[letter] += 1
+    return print(result)
+
+count_letters("aaaaaaaallllllllllllll")
+count_letters("A really long run on sentence, with many words and repeated letters.")
+
+# With this same concept make a function that checks error logs, using error messages.

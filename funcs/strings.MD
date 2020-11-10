@@ -88,3 +88,74 @@ For example, [ x*2 for x in range(1,11) ] is a simple list comprehension. This w
 You can also use conditionals with list comprehensions to build even more complex and powerful statements. You can do this by appending an if statement to the end of the comprehension. For example, [ x for x in range(1,101) if x % 10 == 0 ] would generate a list containing all the integers divisible by 10 from 1 to 100. The if statement we added here evaluates each value in the range from 1 to 100 to check if it’s evenly divisible by 10. If it is, it gets added to the list.
 
 List comprehensions can be really powerful, but they can also be super complex, resulting in code that’s hard to read. Be careful when using them, since it might make it more difficult for someone else looking at your code to easily understand what the code is doing.
+
+## Lists and Tuples Operations Cheat Sheet
+_________
+Lists and tuples are both sequences, so they share a number of sequence operations. But, because lists are mutable, there are also a number of methods specific just to lists. This cheat sheet gives you a run down of the common operations first, and the list-specific operations second.
+
+Common sequence operations
+len(sequence) Returns the length of the sequence
+for element in sequence Iterates over each element in the sequence
+if element in sequence Checks whether the element is part of the sequence
+sequence[i] Accesses the element at index i of the sequence, starting at zero
+sequence[i:j] Accesses a slice starting at index i, ending at index j-1. If i is omitted, it's 0 by default. If j is omitted, it's len(sequence) by default.
+for index, element in enumerate(sequence) Iterates over both the indexes and the elements in the sequence at the same time
+Check out the official documentation for sequence operations.
+
+List-specific operations and methods
+list[i] = x Replaces the element at index i with x
+list.append(x) Inserts x at the end of the list
+list.insert(i, x) Inserts x at index i
+list.pop(i) Returns the element a index i, also removing it from the list. If i is omitted, the last element is returned and removed.
+list.remove(x) Removes the first occurrence of x in the list
+list.sort() Sorts the items in the list
+list.reverse() Reverses the order of items of the list
+list.clear() Removes all the items of the list
+list.copy() Creates a copy of the list
+list.extend(other_list) Appends all the elements of other_list at the end of list
+Most of these methods come from the fact that lists are mutable sequences. For more info, see the official documentation for mutable sequences and the list specific documentation.
+
+List comprehension
+[expression for variable in sequence] Creates a new list based on the given sequence. Each element is the result of the given expression.
+[expression for variable in sequence if condition] Creates a new list based on the given sequence. Each element is the result of the given expression; elements only get added if the condition is true.
+
+https://docs.python.org/3/library/stdtypes.html#lists
+https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
+https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+
+
+## Dictionaries Defined
+Dictionaries are another data structure in Python. They’re similar to a list in that they can be used to organize data into collections. However, data in a dictionary isn't accessed based on its position. Data in a dictionary is organized into pairs of keys and values. You use the key to access the corresponding value. Where a list index is always a number, a dictionary key can be a different data type, like a string, integer, float, or even tuples.
+
+When creating a dictionary, you use curly brackets: {}. When storing values in a dictionary, the key is specified first, followed by the corresponding value, separated by a colon. For example, animals = { "bears":10, "lions":1, "tigers":2 } creates a dictionary with three key value pairs, stored in the variable animals. The key "bears" points to the integer value 10, while the key "lions" points to the integer value 1, and "tigers" points to the integer 2. You can access the values by referencing the key, like this: animals["bears"]. This would return the integer 10, since that’s the corresponding value for this key.
+
+You can also check if a key is contained in a dictionary using the in keyword. Just like other uses of this keyword, it will return True if the key is found in the dictionary; otherwise it will return False.
+
+Dictionaries are mutable, meaning they can be modified by adding, removing, and replacing elements in a dictionary, similar to lists. You can add a new key value pair to a dictionary by assigning a value to the key, like this: animals["zebras"] = 2. This creates the new key in the animal dictionary called zebras, and stores the value 2. You can modify the value of an existing key by doing the same thing. So animals["bears"] = 11 would change the value stored in the bears key from 10 to 11. Lastly, you can remove elements from a dictionary by using the del keyword. By doing del animals["lions"] you would remove the key value pair from the animals dictionary.
+
+## Dictionary Methods Cheat Sheet
+_________
+
+*Definition:*
+
+x = {key1:value1, key2:value2}
+
+Operations
+
+len(dictionary) - Returns the number of items in the dictionary
+for key in dictionary - Iterates over each key in the dictionary
+for key, value in dictionary.items() - Iterates over each key,value pair in the dictionary
+if key in dictionary - Checks whether the key is in the dictionary
+dictionary[key] - Accesses the item with key key of the dictionary
+dictionary[key] = value - Sets the value associated with key
+del dictionary[key] - Removes the item with key key from the dictionary
+Methods
+
+dict.get(key, default) - Returns the element corresponding to key, or default if it's not present
+dict.keys() - Returns a sequence containing the keys in the dictionary
+dict.values() - Returns a sequence containing the values in the dictionary
+dict.update(other_dictionary) - Updates the dictionary with the items coming from the other dictionary. Existing entries will be replaced; new entries will be added.
+dict.clear() - Removes all the items of the dictionary
+Check out the official documentation for dictionary operations and methods.
+
+https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
