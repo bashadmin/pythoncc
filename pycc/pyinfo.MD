@@ -171,3 +171,41 @@ We can use the type() function to figure out what class a variable or value belo
 ## What Is a Method?
 ________
 Calling methods on objects executes functions that operate on attributes of a specific instance of the class. This means that calling a method on a list, for example, only modifies that instance of a list, and not all lists globally. We can define methods within a class by creating functions inside the class definition. These instance methods can take a parameter called self which represents the instance the method is being executed on. This will allow you to access attributes of the instance using dot notation, like self.name, which will access the name attribute of that specific instance of the class object. When you have variables that contain different values for different instances, these are called instance variables.
+
+## Classes and Methods Cheat Sheet
+________
+In the past few videos, we’ve seen how to define classes and methods in Python. Here, you’ll find a run-down of everything we’ve covered, so you can refer to it whenever you need a refresher.
+
+Defining classes and methods:
+```
+class ClassName:
+    def method_name(self, other_parameters):
+    body_of_method
+```
+
+Classes and Instances
+* Classes define the behavior of all instances of a specific class.
+* Each Variable of a specifici class is an instance or object.
+* Objects can have attributes, which store informaion about the object.
+* You can make objects do work by calling their methods.
+* The first parameter of methods (self) represents the current instance.
+* Methods are just link junctions, but they can only be used through a class.
+
+Special methods
+* Special methods start and end with __.
+* Special methods have specific names, like \__init__ for the constructor or \__str__ for the conversion to string.
+
+Documenting classes, methods and functions
+* You can add documentation to classes, methods, and functions by using docstrings right after the definition.
+
+```
+class ClassName:
+    """Documentation for the class."""
+    def method_name(self, other_parameters):
+        """Docmentation for the method."""
+        body_of_method
+
+def function_name(parameters):
+    """Docmentation for the function."""
+    body_of_function
+```
